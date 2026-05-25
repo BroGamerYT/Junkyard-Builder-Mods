@@ -1,0 +1,52 @@
+name: Build and Release Mods Suite
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Run Build and Package Script
+      shell: powershell
+      run: |
+        .\build_and_package.ps1
+
+    # 1. Automatically create/update a GitHub Release and upload all 4 ZIP files
+    - name: Upload to GitHub Releases
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v1.0.0
+        name: Junkyard Builder Mods Suite v1.0.0
+        draft: false
+        prerelease: false
+        files: |
+          JunkyardModManager_v1.0.0.zip
+          JunkyardCheatMod_v1.0.0.zip
+          JunkyardResourceMod_v1.3.0.zip
+          JunkyardSpeedMod_v1.0.0.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # 2. Automated Upload to NexusMods (Optional: Uncomment once you have created the mod pages on Nexus)
+    # - name: Upload Mod Manager to Nexus Mods
+    #   uses: nexusmods/wyrm@v1
+    #   with:
+    #     apikey: ${{ secrets.NEXUSMODS_API_KEY }}
+    #     game: junkyardbuilder
+    #     modid: 12345 # <-- Replace with your actual Mod ID from NexusMods URL!
+    #     file: JunkyardModManager_v1.0.0.zip
+    #     version: 1.0.0
