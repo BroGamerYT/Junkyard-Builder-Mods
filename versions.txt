@@ -1,0 +1,8 @@
+# ========================================================================
+# JUNKYARD BUILDER MODS VERSION LIST
+# Format: ModName=Version|DownloadUrl
+# ========================================================================
+JunkyardModManager=1.0.0|https://raw.githubusercontent.com/BroGamerYT/JunkyardMods/main/JunkyardModManager_v1.0.0.zip
+JunkyardCheatMod=1.0.0|https://raw.githubusercontent.com/BroGamerYT/JunkyardMods/main/JunkyardCheatMod_v1.0.0.zip
+JunkyardResourceMod=1.3.0|https://raw.githubusercontent.com/BroGamerYT/JunkyardMods/main/JunkyardResourceMod_v1.3.0.zip
+JunkyardSpeedMod=1.0.0|https://raw.githubusercontent.com/BroGamerYT/JunkyardMods/main/JunkyardSpeedMod_v1.0.0.zip
