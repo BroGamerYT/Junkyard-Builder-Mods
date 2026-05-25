@@ -2,7 +2,7 @@ Write-Output "=========================================="
 Write-Output "   JUNKYARD MOD MANAGER BUILD & INSTALL   "
 Write-Output "=========================================="
 
-$projectDir = "C:\Users\domin\.gemini\antigravity\scratch\JunkyardModManager"
+$projectDir = $PSScriptRoot
 
 # Compile project in Debug mode (uses PostBuild event to copy to game Mods folder)
 Write-Output "Erstelle Mod Manager..."

@@ -2,7 +2,7 @@ Write-Host "==========================================" -ForegroundColor Green
 Write-Host "     JUNKYARD MOD BUILDER & AUTO-INSTALL  " -ForegroundColor Green
 Write-Host "==========================================" -ForegroundColor Green
 
-$projectPath = "C:\Users\domin\.gemini\antigravity\scratch\JunkyardResourceMod"
+$projectPath = $PSScriptRoot
 $assemblyPath = "E:\Games\Steam\steamapps\common\Junkyard Builder\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll"
 
 if (-not (Test-Path $assemblyPath)) {
