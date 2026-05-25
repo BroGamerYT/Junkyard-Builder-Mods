@@ -11,8 +11,8 @@ dotnet build JunkyardSpeedMod/JunkyardSpeedMod.csproj --configuration Release
 
 Write-Host "=== 2. PACKAGING ALL MODS INTO ZIP ARCHIVES ===" -ForegroundColor Cyan
 function Package-Mod($name, $version, $dllPath, $desc) {
-    $dir = "C:\Users\domin\.gemini\antigravity\scratch\${name}_ReleaseTemp"
-    # If running on GitHub Actions, use local workspace path instead
+    # Use relative path based on the script directory (PSScriptRoot)
+    $dir = "$PSScriptRoot\${name}_ReleaseTemp"
     if ($env:GITHUB_WORKSPACE) {
         $dir = "$env:GITHUB_WORKSPACE\${name}_ReleaseTemp"
     }
@@ -37,7 +37,7 @@ function Package-Mod($name, $version, $dllPath, $desc) {
               
     New-Item -ItemType File -Path "$dir\README.txt" -Value $readme -Force | Out-Null
     
-    $zipPath = "C:\Users\domin\.gemini\antigravity\scratch\${name}_v${version}.zip"
+    $zipPath = "$PSScriptRoot\${name}_v${version}.zip"
     if ($env:GITHUB_WORKSPACE) {
         $zipPath = "$env:GITHUB_WORKSPACE\${name}_v${version}.zip"
     }

@@ -18,5 +18,7 @@ game_strings.txt
 package_zips.ps1
 package_all.ps1
 
-# Nexus release folders (only keep the actual ZIP files)
+# Nexus release folders & ZIP files
 *_NexusRelease/
+*_ReleaseTemp/
+*.zip
