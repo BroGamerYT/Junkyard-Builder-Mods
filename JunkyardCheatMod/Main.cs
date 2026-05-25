@@ -1,5 +1,6 @@
 using MelonLoader;
 using MelonLoader.Utils;
+using HarmonyLib;
 using UnityEngine;
 using System.IO;
 using System.Globalization;
@@ -8,7 +9,7 @@ using Il2CppScripts.Interactables;
 using Il2CppScripts.Player;
 using Il2Cpp;
 
-[assembly: MelonInfo(typeof(JunkyardCheatMod.Main), "Junkyard Cheat Box Mod", "1.0.0", "BroGamerYT")]
+[assembly: MelonInfo(typeof(JunkyardCheatMod.Main), "Junkyard Cheat Box Mod", "1.1.1", "BroGamerYT")]
 [assembly: MelonGame("FreemindGames", "Junkyard Builder")]
 
 namespace JunkyardCheatMod
@@ -151,32 +152,11 @@ namespace JunkyardCheatMod
                 }
             }
 
-            // 1. Sofort-Zerkleinern (Baler & Shredders & Car Crusher)
+            // 1. Sofort-Zerkleinern (Car Crusher)
             if (instantCrush)
             {
                 try
                 {
-                    // Paper Balers
-                    var paperBalers = UnityEngine.Object.FindObjectsOfType<PaperBaler>();
-                    foreach (var baler in paperBalers)
-                    {
-                        baler.SetCompressionDuration(0);
-                    }
-
-                    // Plastic Balers
-                    var plasticBalers = UnityEngine.Object.FindObjectsOfType<PlasticBaler>();
-                    foreach (var baler in plasticBalers)
-                    {
-                        baler.SetCompressionDuration(0);
-                    }
-
-                    // Wood Shredders
-                    var woodShredders = UnityEngine.Object.FindObjectsOfType<WoodShredder>();
-                    foreach (var shredder in woodShredders)
-                    {
-                        shredder.SetCompressionDuration(0);
-                    }
-
                     // Car Crushers
                     var carCrushers = UnityEngine.Object.FindObjectsOfType<CarCrusher>();
                     foreach (var crusher in carCrushers)

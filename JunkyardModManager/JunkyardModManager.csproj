@@ -5,7 +5,7 @@
     <Nullable>disable</Nullable>
     <AssemblyName>JunkyardModManager</AssemblyName>
     <Version>1.0.0</Version>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 

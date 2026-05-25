@@ -8,6 +8,8 @@ dotnet build JunkyardModManager/JunkyardModManager.csproj --configuration Releas
 dotnet build JunkyardCheatMod/JunkyardCheatMod.csproj --configuration Release
 dotnet build JunkyardResourceMod/JunkyardResourceMod.csproj --configuration Release
 dotnet build JunkyardSpeedMod/JunkyardSpeedMod.csproj --configuration Release
+dotnet build JunkyardWeightMod/JunkyardWeightMod.csproj --configuration Release
+dotnet build JunkyardSmartPressMod/JunkyardSmartPressMod.csproj --configuration Release
 
 Write-Host "=== 2. PACKAGING ALL MODS INTO ZIP ARCHIVES ===" -ForegroundColor Cyan
 function Package-Mod($name, $version, $dllPath, $desc) {
@@ -51,8 +53,10 @@ function Package-Mod($name, $version, $dllPath, $desc) {
 }
 
 Package-Mod -name 'JunkyardModManager' -version '1.0.0' -dllPath 'JunkyardModManager/bin/Release/JunkyardModManager.dll' -desc 'The ultimate in-game Mod Manager and automatic updater for Junkyard Builder! Manage and update all your mods in-game via F1.'
-Package-Mod -name 'JunkyardCheatMod' -version '1.0.0' -dllPath 'JunkyardCheatMod/bin/Release/JunkyardCheatMod.dll' -desc 'The ultimate in-game Cheat Box for Junkyard Builder! Geld, XP, Laufgeschwindigkeit, Lieferzeit-Slider und Sofort-Zerkleinern via F2.'
-Package-Mod -name 'JunkyardResourceMod' -version '1.3.0' -dllPath 'JunkyardResourceMod/bin/Release/JunkyardResourceMod.dll' -desc 'Configure scrap delivery amounts, yard capacities, contract payouts and unlock all upgrades instantly in Junkyard Builder.'
+Package-Mod -name 'JunkyardCheatMod' -version '1.1.1' -dllPath 'JunkyardCheatMod/bin/Release/JunkyardCheatMod.dll' -desc 'The ultimate in-game Cheat Box for Junkyard Builder! Geld, XP, Laufgeschwindigkeit, Lieferzeit-Slider und Sofort-Zerkleinern via F2.'
+Package-Mod -name 'JunkyardResourceMod' -version '1.3.1' -dllPath 'JunkyardResourceMod/bin/Release/JunkyardResourceMod.dll' -desc 'Configure scrap delivery amounts, yard capacities, contract payouts and unlock all upgrades instantly in Junkyard Builder.'
 Package-Mod -name 'JunkyardSpeedMod' -version '1.0.0' -dllPath 'JunkyardSpeedMod/bin/Release/JunkyardSpeedMod.dll' -desc 'Control the entire game speed in Junkyard Builder using customizable hotkeys (Num+, Num-, Num*).'
+Package-Mod -name 'JunkyardWeightMod' -version '1.0.0' -dllPath 'JunkyardWeightMod/bin/Release/JunkyardWeightMod.dll' -desc 'Double your carrying capacity and wheelbarrow weight limits in Junkyard Builder.'
+Package-Mod -name 'JunkyardSmartPressMod' -version '1.0.0' -dllPath 'JunkyardSmartPressMod/bin/Release/JunkyardSmartPressMod.dll' -desc 'Ultimate scrap press, baler and shredder optimization for Junkyard Builder! Automatic weight buffering (no lost scrap), continuous insertion (always open green hopper), smart-fill triggers, auto-insertion and instant compression.'
 
 Write-Host "=== BUILD & PACKAGING COMPLETE! ===" -ForegroundColor Green

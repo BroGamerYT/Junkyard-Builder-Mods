@@ -128,22 +128,41 @@ namespace JunkyardSpeedMod
 
         public override void OnUpdate()
         {
-            // Tastatur-Hotkeys abfragen aus Config geladen
-            if (Input.GetKeyDown(Config.SpeedUpKey))
+            // Support both the configured key and standard keyboard equivalents for max compatibility
+            bool speedUpPressed = Input.GetKeyDown(Config.SpeedUpKey) || 
+                                 (Config.SpeedUpKey == KeyCode.KeypadPlus && 
+                                  (Input.GetKeyDown(KeyCode.Plus) || 
+                                   Input.GetKeyDown(KeyCode.Equals) || 
+                                   Input.GetKeyDown(KeyCode.RightBracket) ||
+                                   Input.inputString == "+"));
+            
+            bool speedDownPressed = Input.GetKeyDown(Config.SpeedDownKey) || 
+                                   (Config.SpeedDownKey == KeyCode.KeypadMinus && 
+                                    (Input.GetKeyDown(KeyCode.Minus) || 
+                                     Input.GetKeyDown(KeyCode.Slash) || 
+                                     Input.inputString == "-"));
+            
+            bool normalSpeedPressed = Input.GetKeyDown(Config.NormalSpeedKey) || 
+                                     (Config.NormalSpeedKey == KeyCode.KeypadMultiply && 
+                                      (Input.GetKeyDown(KeyCode.Asterisk) || 
+                                       Input.GetKeyDown(KeyCode.KeypadMultiply) ||
+                                       Input.inputString == "*"));
+
+            if (speedUpPressed)
             {
                 if (currentSpeed < 1.0f) currentSpeed += 0.1f;
                 else currentSpeed = Mathf.Min(10.0f, currentSpeed + 1.0f);
                 Time.timeScale = currentSpeed;
                 ShowStatus($"⏩ Spielgeschwindigkeit: {currentSpeed.ToString("F1")}x", 2.5f);
             }
-            else if (Input.GetKeyDown(Config.SpeedDownKey))
+            else if (speedDownPressed)
             {
                 if (currentSpeed > 1.0f) currentSpeed -= 1.0f;
                 else if (currentSpeed > 0.1f) currentSpeed = Mathf.Max(0.1f, currentSpeed - 0.1f);
                 Time.timeScale = currentSpeed;
                 ShowStatus($"⏪ Spielgeschwindigkeit: {currentSpeed.ToString("F1")}x", 2.5f);
             }
-            else if (Input.GetKeyDown(Config.NormalSpeedKey))
+            else if (normalSpeedPressed)
             {
                 currentSpeed = 1.0f;
                 Time.timeScale = 1.0f;

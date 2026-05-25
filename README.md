@@ -1,7 +1,7 @@
 # 🚜 Junkyard Builder Mods Suite 🛠️
 
 Welcome to the ultimate bilingual mod collection for **Junkyard Builder**! 
-This repository contains four premium, high-quality mods designed to enhance your gameplay, streamline your operations, and add in-game utilities and cheats.
+This repository contains five premium, high-quality mods designed to enhance your gameplay, streamline your operations, and add in-game utilities and cheats.
 
 All mods support **English & German** automatically out-of-the-box, dynamically matching your game's language!
 
@@ -31,8 +31,23 @@ Tailor the economy and progression of the game.
 
 ### 4. 🏃‍♂️ Junkyard Builder - Speed Mod (Hotkeys: Num+, Num-, Num*)
 Take absolute control of time itself.
-*   **Game Speed Control:** Fast-forward or slow-down the entire world (useful for skipping long processes).
+*   **Game Speed Control:** Fast-forward or slow-down the entire world (useful for skipping long processes). Supports standard Plus/Minus keys for maximum compatibility.
 *   **Fully Configurable:** Change hotkeys inside your `UserData/JunkyardSpeedMod.txt` file.
+
+### 5. ⚖️ Junkyard Builder - Weight Mod
+Double your carrying limits and wheelbarrow capacities!
+*   **Multiplier:** Automatically multiplies your carry limit upgrades and wheelbarrow max capacity limits (2.0x default, customizable).
+*   **Dynamic UI:** Configurable watermark showing active multiplier and status.
+*   **Fully Configurable:** Easily change the multiplier inside your `UserData/JunkyardWeightMod.txt` file.
+
+### 6. 🟢 Junkyard Builder - Smart Press Mod (Baler & Shredder Optimization)
+Stabilize, automate, and optimize your scrap machinery operations!
+*   **3D Physics Overlap Scan:** Fully replaces game trigger logic to ensure 100% reliable scrap detection in hoppers.
+*   **Auto-Suck:** Automatically pulls surrounding loose scrap into the hopper.
+*   **Player Hand Protection:** Prevents pulling scrap that the player is actively holding.
+*   **Auto-Weight Buffering:** Excess scrap is saved in buffer memory and automatically fed into the next block, preventing lost resources.
+*   **Instant Compression:** Instantly process blocks with zero wait times.
+*   **Fully Configurable:** Toggle auto-insert, Smart-Fill, auto-suck, and instant-compression in `UserData/JunkyardSmartPressMod.txt`.
 
 ---
 
