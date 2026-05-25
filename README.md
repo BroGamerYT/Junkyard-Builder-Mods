@@ -41,7 +41,7 @@ Take absolute control of time itself.
 All mods are built on top of **MelonLoader** (v0.6.1 or newer).
 
 1. Install **MelonLoader** to your **Junkyard Builder** directory.
-2. Download any `.zip` package from the [Releases](https://github.com/BroGamerYT/JunkyardMods/releases) page.
+2. Download any `.zip` package from the [Releases](https://github.com/BroGamerYT/Junkyard-Builder-Mods/releases) page.
 3. Extract and drop the `.dll` files into your game's **`Junkyard Builder/Mods`** folder.
 4. Launch the game and enjoy!
 

@@ -13,7 +13,7 @@ namespace JunkyardModManager
     public static class Config
     {
         public static KeyCode ToggleKey = KeyCode.F1;
-        public static string UpdateURL = "https://raw.githubusercontent.com/BroGamerYT/JunkyardMods/main/versions.txt";
+        public static string UpdateURL = "https://raw.githubusercontent.com/BroGamerYT/Junkyard-Builder-Mods/main/versions.txt";
         private static string configPath = Path.Combine(MelonEnvironment.UserDataDirectory, "JunkyardModManager.txt");
 
         public static void Load()
@@ -77,7 +77,7 @@ namespace JunkyardModManager
                     writer.WriteLine("ToggleKey=F1");
                     writer.WriteLine("#");
                     writer.WriteLine("# URL fuer den Mod-Updater (Pfad zu einer versions.txt)");
-                    writer.WriteLine("UpdateURL=https://raw.githubusercontent.com/BroGamerYT/JunkyardMods/main/versions.txt");
+                    writer.WriteLine("UpdateURL=https://raw.githubusercontent.com/BroGamerYT/Junkyard-Builder-Mods/main/versions.txt");
                 }
             }
             catch (System.Exception ex)
